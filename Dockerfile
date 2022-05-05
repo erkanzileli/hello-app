@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine3.12 AS build
+FROM golang:1.18-alpine AS build
 
 WORKDIR /build
 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN go build -o app
 
-FROM alpine:3.12
+FROM alpine
 
 EXPOSE 8081
 
